@@ -9,7 +9,7 @@ app.get('/data', (req, res) => {
 
     const imageUrl = `${baseUrl}/gambar.jpg`;
     const videoUrl = `${baseUrl}/video.mp4`;
-    const audioUrl = `${baseUrl}/audio/sample.mp3`;
+    const audioUrl = `${baseUrl}/record_test.mp3`;
     const text = "This is a sample text returned directly as a string.";
 
     res.json({
@@ -23,5 +23,5 @@ app.get('/data', (req, res) => {
 app.use('/assets', express.static(path.join(__dirname, 'assets')));
 
 app.listen(PORT, () => {
-    console.log(`Server is running on http://localhost:${PORT}`);
+    console.log(`udah jalan bos`);
 });
