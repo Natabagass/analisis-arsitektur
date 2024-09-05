@@ -21,7 +21,7 @@ app.get('/audio', (req, res) => {
 
 app.get('/text', (req, res) => {
     const text = "This is a sample text returned directly as a string.";
-    res.send({text: text});
+    res.send({ text: text });
 });
 
 app.use('/assets', express.static(path.join(__dirname, 'assets')));
