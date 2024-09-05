@@ -2,7 +2,7 @@ const express = require('express');
 const path = require('path');
 
 const app = express();
-const PORT = 3000;
+const PORT = 5000;
 
 app.get('/image', (req, res) => {
     const imageUrl = `${req.protocol}://${req.get('host')}/assets/gambar.jpeg`;
@@ -21,7 +21,7 @@ app.get('/audio', (req, res) => {
 
 app.get('/text', (req, res) => {
     const text = "This is a sample text returned directly as a string.";
-    res.send(text);
+    res.send({text: text});
 });
 
 app.use('/assets', express.static(path.join(__dirname, 'assets')));
