@@ -4,7 +4,7 @@ import { NextRequest } from "next/server";
 export async function GET(request: NextRequest) {
 
     try {
-        const res = await axios.get('http://localhost:5000' + '/data', {
+        const res = await axios.get('http://localhost:5000' + '/image', {
             headers: {
                 "Accept": "application/json",
                 "Content-Type": "application/json",

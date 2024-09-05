@@ -12,23 +12,31 @@ type data = {
 }
 
 export default function Home() {
-  const [data, setData] = useState<data>()
+  const [data, setData] = useState<data>({
+    text: '',
+    videoUrl: '',
+    audioUrl: '',
+    imageUrl: ''
+  })
 
   const getData = async () => {
-    const res = await fetch('/api/get', {
-      method: 'GET'
-    })
+    const video = await fetch('/api/video')
+    const text = await fetch('/api/text')
+    const image = await fetch('/api/image')
+    const audio = await fetch('/api/audio')
 
-    if (res.status === 200) {
-      const datas = await res.json()
-      setData(datas)
+    if (video.status === 200 || text.status === 200 || image.status === 200 || audio.status === 200) {
+      const datasVideo = await video.json()
+      const datasText = await text.json()
+      const datasImage = await image.json()
+      const datasAudio = await audio.json()
+      setData({...data, text: datasText.text, videoUrl: datasVideo.url, imageUrl: datasImage.url, audioUrl: datasAudio.url})
     }
   }
 
   useEffect(() => {
     getData()
   }, [])
-
 
   return (
     <div className="grid grid-cols-2 gap-10 p-10 h-full justify-center items-center w-full">
