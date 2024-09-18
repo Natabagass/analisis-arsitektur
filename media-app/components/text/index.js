@@ -1,6 +1,6 @@
-const Text = ({ data }: { data: string }) => {
+const Text = ({ data }) => {
     return (
-        <div className="w-full">
+        <div>
             <h1>{data}</h1>
         </div>
     );

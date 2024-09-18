@@ -1,6 +1,6 @@
-const Videos = ({ data }: { data: string }) => {
+const Videos = ({ data }) => {
     return (
-        <div className="w-full">
+        <div>
             <video
                 src={data}
                 controls={true}

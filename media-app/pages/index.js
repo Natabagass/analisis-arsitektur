@@ -1,31 +1,9 @@
-'use client'
-
 import Head from "next/head";
 import { Inter } from "next/font/google";
 
 const inter = Inter({ subsets: ["latin"] });
 
 export default function Home() {
-  const [data, setData] = useState < data > ({
-    text: '',
-    videoUrl: '',
-    audioUrl: '',
-    imageUrl: ''
-  })
-
-  const getData = async () => {
-    const media = await fetch('http://localhost:5000/media')
-
-    if (media.status === 200) {
-      const datasMedia = await video.json()
-      setData({ ...data, text: datasMedia.text, videoUrl: datasMedia.url, imageUrl: datasMedia.url, audioUrl: datasMedia.url })
-    }
-  }
-
-  useEffect(() => {
-    getData()
-  }, [])
-
   return (
     <>
       <Head>
@@ -36,12 +14,6 @@ export default function Home() {
       </Head>
       <main className={`${inter.className}`}>
         Medias Page
-        <div className="grid grid-cols-2 gap-10 p-10 h-full justify-center items-center w-full">
-          <Text data={data.text} />
-          <Images data={data.imageUrl} />
-          <Videos data={data.videoUrl} />
-          <Audios data={data.audioUrl} />
-        </div>
       </main>
     </>
   );

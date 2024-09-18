@@ -18,9 +18,7 @@ const nextConfig = {
       new NextFederationPlugin({
         name: "main-app",
         remotes: {
-          "images": `images@http://localhost:3001/_next/static/${
-            isServer ? "ssr" : "chunks"
-          }/remoteEntry.js`,
+          "media-app": `media-app@http://localhost:3001/_next/static/${isServer ? "ssr" : "chunks"}/remoteEntry.js`,
         },
         filename: "static/chunks/remoteEntry.js",
         shared: {

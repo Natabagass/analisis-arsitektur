@@ -16,17 +16,14 @@ const nextConfig = {
     const { isServer } = options;
     config.plugins.push(
       new NextFederationPlugin({
-        name: "audios",
+        name: "media-app",
         remotes: {
           "main-app": `main-app@http://localhost:3000/_next/static/${
             isServer ? "ssr" : "chunks"
           }/remoteEntry.js`,
         },
         exposes: {
-          "./Audio": "./components/audio/index.js",
-          "./Text": "./components/text/index.js",
-          "./Video": "./components/video/index.js",
-          "./Image": "./components/image/index.js",
+          "./MediaShow": "./components/media-show/index.js",
         },
         filename: "static/chunks/remoteEntry.js",
         shared: {

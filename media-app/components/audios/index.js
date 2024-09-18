@@ -1,6 +1,6 @@
-const Audios = ({ data }: { data: string }) => {
+const Audios = ({ data }) => {
     return (
-        <div className="w-full">
+        <div>
             <audio controls src={data} />
         </div>
     );
