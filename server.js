@@ -1,8 +1,10 @@
 const express = require('express');
 const path = require('path');
+const cors = require('cors');
 
 const app = express();
 const PORT = 5000;
+app.use(cors());
 
 app.get('/image', (req, res) => {
     const imageUrl = `${req.protocol}://${req.get('host')}/assets/gambar.jpeg`;
