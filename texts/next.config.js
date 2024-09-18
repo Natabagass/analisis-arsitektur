@@ -23,7 +23,7 @@ const nextConfig = {
           }/remoteEntry.js`,
         },
         exposes: {
-          "./Audio": "./components/audio/index.js",
+          "./Text": "./components/text/index.js",
         },
         filename: "static/chunks/remoteEntry.js",
         shared: {

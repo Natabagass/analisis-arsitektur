@@ -24,6 +24,9 @@ const nextConfig = {
         },
         exposes: {
           "./Audio": "./components/audio/index.js",
+          "./Text": "./components/text/index.js",
+          "./Video": "./components/video/index.js",
+          "./Image": "./components/image/index.js",
         },
         filename: "static/chunks/remoteEntry.js",
         shared: {
