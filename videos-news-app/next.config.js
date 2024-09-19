@@ -16,14 +16,17 @@ const nextConfig = {
     const { isServer } = options;
     config.plugins.push(
       new NextFederationPlugin({
-        name: "main-app",
+        name: "videos-news-app",
         remotes: {
-          "media-app": `media-app@http://localhost:3001/_next/static/${isServer ? "ssr" : "chunks"}/remoteEntry.js`,
-          "news-app": `news-app@http://localhost:3002/_next/static/${isServer ? "ssr" : "chunks"}/remoteEntry.js`,
-          "videos-news-app": `videos-news-app@http://localhost:3003/_next/static/${isServer ? "ssr" : "chunks"}/remoteEntry.js`,
+          "main-app": `main-app@http://localhost:3000/_next/static/${isServer ? "ssr" : "chunks"
+            }/remoteEntry.js`,
+        },
+        exposes: {
+          "./Videos-news": "./components/news-videos/index.js",
         },
         filename: "static/chunks/remoteEntry.js",
-        shared: {},
+        shared: {
+        },
       })
     );
 

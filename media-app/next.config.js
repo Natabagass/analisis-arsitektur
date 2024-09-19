@@ -18,9 +18,8 @@ const nextConfig = {
       new NextFederationPlugin({
         name: "media-app",
         remotes: {
-          "main-app": `main-app@http://localhost:3000/_next/static/${
-            isServer ? "ssr" : "chunks"
-          }/remoteEntry.js`,
+          "main-app": `main-app@http://localhost:3000/_next/static/${isServer ? "ssr" : "chunks"
+            }/remoteEntry.js`,
         },
         exposes: {
           "./MediaShow": "./components/media-show/index.js",

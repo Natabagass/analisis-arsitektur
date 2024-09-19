@@ -28,7 +28,16 @@ const MediaShow = () => {
     }, [])
 
     return (
-        <div className="grid grid-cols-2 gap-10 p-10 h-full justify-center items-center w-full">
+        <div style={{
+            display: 'grid',
+            gridTemplateColumns: 'repeat(2, minmax(0, 1fr))',
+            gap: '2.5rem',
+            padding: '2.5rem',
+            height: '100%',
+            justifyContent: 'center',
+            alignItems: 'center',
+            width: '100%'
+        }}>
             <Text data={data.text} />
             <Images data={data.imageUrl} />
             <Videos data={data.videoUrl} />
