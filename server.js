@@ -20,6 +20,30 @@ app.get('/media', (req, res) => {
     res.json(responseData);
 });
 
+app.get('/news', (req, res) => {
+    const baseUrl = `${req.protocol}://${req.get('host')}/assets`;
+    
+    const responseData = {
+        image: `${baseUrl}/gambar.jpeg`,
+        title: 'This is testing a article',
+        desc: `Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla felis leo, vehicula ac hendrerit ac, volutpat id quam. Etiam massa lacus, pulvinar id sollicitudin quis, congue non felis. Pellentesque ipsum odio, faucibus at hendrerit scelerisque, consequat vitae urna. Cras vulputate sagittis dui commodo scelerisque. Quisque ut auctor orci. Mauris sed dictum elit. Sed sollicitudin rhoncus purus, sit amet tempor ligula pulvinar vel. Aenean eget interdum nisl. Integer scelerisque nibh nec est blandit lobortis. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Etiam ac aliquam ligula, eu malesuada augue. Duis fermentum lacus a felis bibendum egestas.`
+    };
+    
+    res.json(responseData);
+});
+
+app.get('/news-video', (req, res) => {
+    const baseUrl = `${req.protocol}://${req.get('host')}/assets`;
+    
+    const responseData = {
+        video: `${baseUrl}/goldengate.mp4`,
+        title: 'This is testing a article with videos',
+        desc: `Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla felis leo, vehicula ac hendrerit ac, volutpat id quam. Etiam massa lacus, pulvinar id sollicitudin quis, congue non felis. Pellentesque ipsum odio, faucibus at hendrerit scelerisque, consequat vitae urna. Cras vulputate sagittis dui commodo scelerisque. Quisque ut auctor orci. Mauris sed dictum elit. Sed sollicitudin rhoncus purus, sit amet tempor ligula pulvinar vel. Aenean eget interdum nisl. Integer scelerisque nibh nec est blandit lobortis. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Etiam ac aliquam ligula, eu malesuada augue. Duis fermentum lacus a felis bibendum egestas.`
+    };
+    
+    res.json(responseData);
+});
+
 app.use('/assets', express.static(path.join(__dirname, 'assets')));
 
 app.listen(PORT, () => {
