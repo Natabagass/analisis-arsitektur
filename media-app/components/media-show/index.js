@@ -1,4 +1,4 @@
-'sue client'
+'use client'
 
 import { useEffect, useState } from "react";
 import Text from "@/components/text";
