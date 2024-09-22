@@ -7,7 +7,8 @@ const NewsVideo = () => {
     const [data, setData] = useState({
         video: '',
         title: '',
-        desc: ''
+        desc: '',
+        audio: ''
     })
 
     const getData = async () => {
@@ -15,7 +16,7 @@ const NewsVideo = () => {
 
         if (news.status === 200) {
             const datasNews = await news.json()
-            setData({ ...data, title: datasNews.title, desc: datasNews.desc, video: datasNews.video })
+            setData({ ...data, title: datasNews.title, desc: datasNews.desc, video: datasNews.video, audio: datasNews.audio })
         }
     }
 
@@ -24,16 +25,7 @@ const NewsVideo = () => {
     }, [])
 
     return (
-        <div style={{
-            display: 'grid',
-            gridTemplateRows: 'auto 1fr auto',
-            gap: '2.5rem',
-            padding: '2.5rem',
-            height: '100%',
-            justifyContent: 'center',
-            alignItems: 'center',
-            width: '100%'
-        }}>
+        <div style={{ display: 'grid', gridTemplateRows: 'auto 1fr auto auto', gap: '2.5rem', padding: '2.5rem', height: '100%', justifyContent: 'center', alignItems: 'center', width: '100%' }}>
             <h1 style={{ fontSize: '2rem', fontWeight: 'bold', textAlign: 'center' }}>{data.title}</h1>
             <div style={{ position: 'relative', width: '100%', height: '300px' }}>
                 <video
@@ -43,9 +35,12 @@ const NewsVideo = () => {
                     alt="Article Video"
                 />
             </div>
+            <audio controls style={{ width: '100%' }}>
+                <source src={data.audio} type="audio/mp3" />
+                Your browser does not support the audio element.
+            </audio>
             <p style={{ fontSize: '1rem', textAlign: 'justify' }}>{data.desc}</p>
         </div>
-
     );
 }
 

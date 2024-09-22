@@ -28,7 +28,6 @@ const MediaShow = () => {
             display: 'grid',
             gridTemplateRows: 'auto 1fr auto',
             gap: '2.5rem',
-            padding: '2.5rem',
             height: '100%',
             justifyContent: 'center',
             alignItems: 'center',
