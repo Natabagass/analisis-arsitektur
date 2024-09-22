@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react"
+import TagCardNews from "../tag-card-news"
 
 const TagNews = () => {
     const [data, setData] = useState([])
@@ -19,13 +20,7 @@ const TagNews = () => {
     return (
         <div style={{ display: 'flex', flexDirection: 'column', width: '100%', gap: '1.5rem', marginTop: '2.5rem', justifyContent: 'center' }}>
             <h2 style={{ fontWeight: 'bold', fontSize: '30px' }}>Ini merupakan Tag Berita</h2>
-            <div style={{ display: 'flex', flexWrap: 'wrap', gap: '0.5rem', padding: '1rem', backgroundColor: '#f9fafb', borderRadius: '0.375rem', border: '1px solid #e5e7eb' }}>
-                {data.map((tag, index) => (
-                    <span key={index} style={{ padding: '0.25rem 0.75rem', backgroundColor: '#E5E7EB', color: '#374151', borderRadius: '9999px', fontSize: '0.875rem', fontWeight: '500' }}>
-                        {tag.tag}
-                    </span>
-                ))}
-            </div>
+            <TagCardNews data={data} />
         </div>
     );
 }
